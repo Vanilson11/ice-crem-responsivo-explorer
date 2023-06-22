@@ -1,0 +1,290 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bkg-color: #EFF1FF;
+  --rose-color: #FEEAFA;
+  --bkg-title-color: #CBC0D3;
+  --bkg-header-color: #8E9AAF;
+  --dark-color: #4A4E69;
+
+  --ff-title: 'Staatliches', cursive;
+  --ff-primary: 'Palanquin', sans-serif;
+
+  font-size: 62.5%;
+  --fs-principal: 1.6rem;
+}
+
+body{
+  background-color: #EFF1FF;
+  font-size: var(--fs-principal);
+  /* width: 100vw; */
+  height: 100vh;
+}
+
+#page{
+  min-width: 37.5rem;
+  height: 100%;
+
+  /* margin: 0 auto; */
+
+  display: grid;
+  align-items: center;
+}
+
+header{
+  background-color: var(--bkg-header-color);
+
+  width: 100%;
+  /* height: 27.9rem; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 0 2.9rem;
+
+  gap: 2rem;
+}
+
+header .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3.2rem 0;
+
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+
+  animation: rotateleft 700ms ease;
+}
+
+header h1{
+  background-color: var(--bkg-title-color);
+
+  width: 100%;
+  padding: 8px 0;
+
+  text-align: center;
+  color: var(--rose-color);
+
+  font-family: var(--ff-title);
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 4px;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+header p{
+  display: none;
+}
+
+.wrapper{
+  /* width: 100%; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6.3rem;
+
+  padding: 1.6rem 0 6rem;
+}
+
+.wrapper .paragrafo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 31.5rem;
+
+}
+
+.wrapper .paragrafo p{
+  font-family: var(--ff-primary);
+  font-size: 2rem;
+  line-height: 2.5rem;
+
+  text-align: justify;
+
+  color: #23053A; 
+}
+
+.produtos{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.produtos .produto-wrapper{
+  width: 32rem;
+
+  border-radius: 2rem;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.produtos .produto-wrapper img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  transition: transform 200ms ease;
+}
+
+.produtos .produto-wrapper img:hover{
+  transform: scale(1.1);
+}
+
+.produtos .produto-wrapper span{
+  background-color: var(--rose-color);
+
+  font-family: var(--ff-title);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  color: var(--dark-color);
+
+  letter-spacing: 0.05em;
+
+  border-radius: 2rem;
+
+  padding: 0 2.3rem;
+  position: absolute;
+  top: 1.7rem;
+  left: 18.4rem;
+}
+
+.wrapper .footer{
+  display: none;
+}
+@keyframes rotateleft{
+  0%{
+    opacity: 0;
+    transform: translateX(100px) rotate(360deg);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@media (min-width: 700px){
+  #page{
+    min-width: 70rem;
+  }
+  header p{
+    display: block;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Roboto' sans-serif;
+    line-height: 2.4rem;
+
+    width: 70rem;
+  }
+  .wrapper .paragrafo{
+    display: none;
+  }
+
+  .produtos{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .produtos .coluna{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .produtos #flex{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 980px){
+  #page{
+    width: 100%;
+    height: 100vh;
+    grid-template-areas: "A B B";
+
+    align-items: stretch;
+    gap: 10px;
+  }
+  header{
+    min-width: 10rem;
+    grid-area: A;
+  }
+
+  header p{
+    width: 28rem;
+  }
+
+  .wrapper{
+    min-width: 15rem; 
+    grid-area: B;
+
+    margin: 0 auto;
+
+    padding: 4.6rem 1rem 6rem;
+  }
+
+  .produtos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width: 100%;
+  }
+
+  .produtos #flex{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .produtos .produto-wrapper{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .produtos .produto-wrapper img{
+    width: 100%;
+  }
+
+  .produtos .produto-wrapper span{
+    display: none;
+  }
+  .wrapper .footer{
+    display: block;
+
+    width: 37rem;
+
+    text-align: center;
+
+    color: #4A4E69;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.75rem;
+  }
+
+  .wrapper .footer p a{
+    text-decoration: none;
+    color: #4A4E69;
+    font-weight: bold;
+  }
+}
