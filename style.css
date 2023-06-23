@@ -121,6 +121,8 @@ header p{
   justify-content: center;
   align-items: center;
   gap: 3.6rem;
+
+  animation: slideToBotton 700ms 300ms backwards ease;
 }
 
 .produtos .produto-wrapper{
@@ -177,6 +179,17 @@ header p{
   100%{
     opacity: 1;
     transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes slideToBotton{
+  0%{
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
